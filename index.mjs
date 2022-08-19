@@ -4,7 +4,7 @@ import nodeStatic from 'node-static';
 
 
 const bare =  createServer('/bare/');
-const serve = new nodeStatic.Server('/');
+const serve = new nodeStatic.Server('./');
 
 const server = http.createServer();
 
@@ -25,5 +25,5 @@ server.on('upgrade', (req, socket, head) => {
 });
 
 server.listen({
-	port: process.env.PORT || 8080,
+	port: process.env.PORT || 3000,
 });
